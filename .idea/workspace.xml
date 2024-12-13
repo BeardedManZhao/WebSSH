@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f257d49-fe2e-4f69-9fe1-280abcbcaff0" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/WebSSH.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/xterm.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/backImage3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery-3.4.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/webssh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/xterm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/webssh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +168,7 @@
       <workItem from="1734108852100" duration="3084000" />
       <workItem from="1734112973066" duration="159000" />
       <workItem from="1734113134676" duration="221000" />
+      <workItem from="1734113971743" duration="1001000" />
     </task>
     <servers />
   </component>
