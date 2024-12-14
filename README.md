@@ -6,7 +6,7 @@
 
 一个基于Java的WebSSH项目，使用 springBoot 做服务器，基于SSH协议，支持Linux、Windows、Mac等系统。其不需要任何外部依赖，具有非常快速的性能！！！
 
-![image](https://github.com/user-attachments/assets/bd4caf35-b410-42c6-a4e0-946c51c6d81a)
+![image](https://github.com/user-attachments/assets/f4f75238-ddc8-4117-9400-70d09b422ecd)
 
 ## 下载
 
