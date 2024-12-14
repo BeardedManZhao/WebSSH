@@ -65,9 +65,24 @@ button.Mobile {
     text-align: center;
     display: inline-block;
     transition: all 0.3s ease-in-out;
-    background: rgba(255, 255, 255, 0.5);
 }
 
 .githubLogo:hover {
-    background: #FFFFFF;
+    background: #004414;
+}
+
+#webSshLogo {
+    width: 50px;
+    height: 50px;
+}
+
+#webSshLogo.Mobile {
+    width: 100px;
+    height: 100px;
+}
+
+code {
+    background: #252525;
+    padding: 4px;
+    border-radius: 10px;
 }
