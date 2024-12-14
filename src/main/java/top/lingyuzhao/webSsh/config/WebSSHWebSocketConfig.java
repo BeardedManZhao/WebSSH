@@ -1,11 +1,11 @@
 package top.lingyuzhao.webSsh.config;
 
-import top.lingyuzhao.webSsh.interceptor.WebSocketInterceptor;
-import top.lingyuzhao.webSsh.websocket.WebSSHWebSocketHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
+import top.lingyuzhao.webSsh.interceptor.WebSocketInterceptor;
+import top.lingyuzhao.webSsh.websocket.WebSSHWebSocketHandler;
 
 /**
  * 配置类
