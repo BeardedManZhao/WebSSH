@@ -9,23 +9,10 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebSSH.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/xterm.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/backImage3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/docker.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/favicon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/java.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery-3.4.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/webssh.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/xterm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/webssh.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/WebSSH.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebSSH.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,8 +107,8 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn package" />
       <command value="mvn clean" />
+      <command value="mvn package" />
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.WebSSHStarter (1)">
@@ -189,7 +176,7 @@
       <workItem from="1734113971743" duration="1001000" />
       <workItem from="1734143585624" duration="953000" />
       <workItem from="1734147581948" duration="5856000" />
-      <workItem from="1734157343910" duration="983000" />
+      <workItem from="1734157343910" duration="1249000" />
     </task>
     <servers />
   </component>
