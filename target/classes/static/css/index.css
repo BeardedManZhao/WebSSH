@@ -42,9 +42,10 @@ input.Mobile {
     font-size: 30px;
 }
 
-button.Mobile {
+button.Mobile, .button.Mobile {
     font-size: 30px;
 }
+
 .otherLogo {
     cursor: pointer;
     border-radius: 50%;

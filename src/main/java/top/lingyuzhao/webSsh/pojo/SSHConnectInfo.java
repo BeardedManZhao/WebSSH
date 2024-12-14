@@ -3,11 +3,17 @@ package top.lingyuzhao.webSsh.pojo;
 import org.springframework.web.socket.WebSocketSession;
 import top.lingyuzhao.utils.SSHClient;
 
+/**
+ * SSH连接信息包装类
+ */
 public class SSHConnectInfo implements AutoCloseable {
     private WebSocketSession webSocketSession;
 
     private SSHClient sshClient;
 
+    /**
+     * @return WebSocketSession
+     */
     public WebSocketSession getWebSocketSession() {
         return webSocketSession;
     }
@@ -16,6 +22,9 @@ public class SSHConnectInfo implements AutoCloseable {
         this.webSocketSession = webSocketSession;
     }
 
+    /**
+     * @return SSHClient
+     */
     public SSHClient getSshClient() {
         return sshClient;
     }

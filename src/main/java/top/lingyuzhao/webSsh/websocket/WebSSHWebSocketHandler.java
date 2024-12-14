@@ -21,6 +21,18 @@ public class WebSSHWebSocketHandler extends TextWebSocketHandler {
 
     public WebSSHWebSocketHandler(WebSSHService webSSHService) {
         this.webSSHService = webSSHService;
+        logger.info("""
+                                  .-') _                   .-') _ \s
+                                 ( OO ) )                 ( OO ) )\s
+                 .-'),-----. ,--./ ,--,'  .-'),-----. ,--./ ,--,' \s
+                ( OO'  .-.  '|   \\ |  |\\ ( OO'  .-.  '|   \\ |  |\\ \s
+                /   |  | |  ||    \\|  | )/   |  | |  ||    \\|  | )\s
+                \\_) |  |\\|  ||  .     |/ \\_) |  |\\|  ||  .     |/ \s
+                  \\ |  | |  ||  |\\    |    \\ |  | |  ||  |\\    |  \s
+                   `'  '-'  '|  | \\   |     `'  '-'  '|  | \\   |  \s
+                     `-----' `--'  `--'       `-----' `--'  `--'  \s
+                                     welcome to OnOn-WebSSH~~~~~
+                                """);
     }
 
     @Override
@@ -42,7 +54,7 @@ public class WebSSHWebSocketHandler extends TextWebSocketHandler {
 
     @Override
     public void afterConnectionClosed(WebSocketSession webSocketSession, @NonNull CloseStatus closeStatus) {
-        logger.info("用户:{}断开webssh连接", webSocketSession.getAttributes().get(ConstantPool.USER_UUID_KEY));
+        logger.info("用户:{}断开webSSH连接", webSocketSession.getAttributes().get(ConstantPool.USER_UUID_KEY));
         //调用service关闭连接
         webSSHService.close(webSocketSession);
     }

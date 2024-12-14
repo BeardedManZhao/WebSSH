@@ -62,6 +62,11 @@ public class WebSSHServiceImpl implements WebSSHService {
                     logger.error("web ssh连接异常");
                     logger.error("异常信息:{}", e.getMessage());
                     close(session);
+                    try {
+                        session.close();
+                    } catch (IOException ignored) {
+
+                    }
                 }
             }
             case ConstantPool.WEBSSH_OPERATE_COMMAND -> {
@@ -69,7 +74,11 @@ public class WebSSHServiceImpl implements WebSSHService {
                 SSHConnectInfo sshConnectInfo = (SSHConnectInfo) sshMap.get(userId);
                 if (sshConnectInfo != null) {
                     try {
-                        sshConnectInfo.getSshClient().sendCommand(command);
+                        final boolean b = sshConnectInfo.getSshClient().sendCommand(command);
+                        if (!b) {
+                            close(session);
+                            session.close();
+                        }
                     } catch (IOException e) {
                         logger.error("web ssh连接异常");
                         logger.error("异常信息:{}", e.getMessage());

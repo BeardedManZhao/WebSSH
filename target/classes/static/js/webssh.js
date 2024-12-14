@@ -1,4 +1,5 @@
 function WSSHClient() {
+    console.info("                  .-') _                   .-') _ \s\n                 ( OO ) )                 ( OO ) )\s\n .-'),-----. ,--./ ,--,'  .-'),-----. ,--./ ,--,' \s\n( OO'  .-.  '|   \\ |  |\\ ( OO'  .-.  '|   \\ |  |\\ \s\n/   |  | |  ||    \\|  | )/   |  | |  ||    \\|  | )\s\n\\_) |  |\\|  ||  .     |/ \\_) |  |\\|  ||  .     |/ \s\n  \\ |  | |  ||  |\\    |    \\ |  | |  ||  |\\    |  \s\n   `'  '-'  '|  | \\   |     `'  '-'  '|  | \\   |  \s\n     `-----' `--'  `--'       `-----' `--'  `--'  \s\n                     welcome to OnOn-WebSSH~~~~~")
 }
 
 WSSHClient.prototype._generateEndpoint = function () {
