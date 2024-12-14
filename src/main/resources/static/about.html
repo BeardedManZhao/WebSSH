@@ -2,11 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>关于WebSSH</title>
+    <title>WebSSH - 实现网页中的 SSH 客户端操作</title>
+    <meta name="description" content="WebSSH 是一个基于 Java 的 WebSSH 开源项目，支持多用户多线程操作，无需任何外部依赖，性能优异。">
+    <meta name="keywords" content="WebSSH, SSH客户端, Java, Spring Boot, Docker, 快速部署, 多用户, 多线程">
     <link href="image/favicon.jpg" rel="SHORTCUT ICON">
     <link href="https://www.lingyuzhao.top/css/listBlock.css" rel="stylesheet">
     <link href="https://www.lingyuzhao.top/css/Theme.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "WebSSH",
+            "description": "WebSSH 是一个基于 Java 的 WebSSH 开源项目，支持多用户多线程操作，无需任何外部依赖，性能优异。",
+            "url": "http://webSsh.lingyuzhao.top:8080/about.html",
+            "softwareVersion": "1.0.0",
+            "operatingSystem": "Linux, Windows, Mac",
+            "applicationCategory": "ProductivityApplication",
+            "author": {
+                "@type": "Person",
+                "name": "BeardedManZhao"
+            },
+            "downloadUrl": "https://github.com/BeardedManZhao/WebSSH.git"
+        }
+    </script>
+
     <style>
         * {
             color: #FFFFFF;
@@ -51,11 +71,11 @@
                 docker 以及 Java操作的命令。</p>
         </div>
         <div style="width: 100%;" title="docker 直接启动镜像！">
-            <img alt="docker" class="otherLogo" src="image/docker.jpg">
+            <img alt="docker 镜像 启动" class="otherLogo" src="image/docker.jpg">
             <code>docker pull beardedmanzhao/webssh && docker run -d -p 8080:8080 beardedmanzhao/webssh</code>
         </div>
         <div style="width: 100%;" title="java 直接启动 jar 包">
-            <img alt="java" class="otherLogo" src="image/java.jpg">
+            <img alt="java 使用 SpringBoot jar 启动！" class="otherLogo" src="image/java.jpg">
             <code>java -jar WebSSH.jar</code>
         </div>
     </div>
