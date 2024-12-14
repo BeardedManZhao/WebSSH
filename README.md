@@ -4,6 +4,12 @@
 
 官网：[访问官网页面](http://webssh.lingyuzhao.top:8080/about.html)
 
+# 社区 qq 群
+
+> 大家可以直接从这里进入来咨询作者和交流哦！！
+
+![无标题](https://github.com/user-attachments/assets/0d33aa4c-099e-4ac1-9f0a-0ec48199da15)
+
 ## WebSsh
 
 一个基于Java的WebSSH项目，使用 springBoot 做服务器，基于SSH协议，支持Linux、Windows、Mac等系统。其不需要任何外部依赖，具有非常快速的性能！！！
