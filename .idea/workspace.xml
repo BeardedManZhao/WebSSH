@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f257d49-fe2e-4f69-9fe1-280abcbcaff0" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/pojo/SSHConnectInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/pojo/SSHConnectInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/service/impl/WebSSHServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/service/impl/WebSSHServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/websocket/WebSSHWebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/websocket/WebSSHWebSocketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/webssh.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/webssh.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webssh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/webssh.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebSSH.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebSSH.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/webssh.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/webssh.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/webssh.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/webssh.html" afterDir="false" />
-    </list>
+    <list default="true" id="6f257d49-fe2e-4f69-9fe1-280abcbcaff0" name="更改" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -188,6 +170,7 @@
       <workItem from="1734157343910" duration="1249000" />
       <workItem from="1734159584514" duration="402000" />
       <workItem from="1734172432072" duration="4285000" />
+      <workItem from="1734179479923" duration="306000" />
     </task>
     <servers />
   </component>
