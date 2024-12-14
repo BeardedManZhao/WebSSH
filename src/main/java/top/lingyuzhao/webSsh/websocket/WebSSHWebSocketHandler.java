@@ -22,6 +22,7 @@ public class WebSSHWebSocketHandler extends TextWebSocketHandler {
     public WebSSHWebSocketHandler(WebSSHService webSSHService) {
         this.webSSHService = webSSHService;
         logger.info("""
+                                  
                                   .-') _                   .-') _ \s
                                  ( OO ) )                 ( OO ) )\s
                  .-'),-----. ,--./ ,--,'  .-'),-----. ,--./ ,--,' \s
