@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <title>WebSSH</title>
     <link href="css/xterm.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body style="height: 100%; margin: 0">
+<div id="buttonList">
+    <button id="buttonList_sendFile" title="发送文件"></button>
+    <button id="buttonList_downFile" title="下载文件"></button>
+</div>
 <div id="terminal" style="width: 100%;height: 100%"></div>
 
 <script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/utils.js"></script>
 <script charset="utf-8" src="js/xterm.js"></script>
 <script charset="utf-8" src="js/webssh.js"></script>
 <script>
@@ -21,7 +27,7 @@
         params[kv[0]] = kv[1];
     });
     if (params.password) {
-        params.password = atob(decodeURIComponent(decodeURIComponent(params.password)));
+        params.password = OnOnWebSSH.decode(params.password, true);
     }
 
     function extracted(numberKey, defaultValue, stringValue) {
@@ -57,7 +63,7 @@
 
         term.on('data', function (data) {
             //键盘输入时的回调函数
-            client.sendClientData(data);
+            client.sendClientData(data, e => term.write(e));
         });
         term.open(document.getElementById('terminal'));
 
@@ -91,6 +97,35 @@
             }
         });
 
+        document.querySelector("#buttonList_sendFile").addEventListener("click", function (e) {
+            const input = document.createElement("input");
+            input.type = "file";
+            input.onchange = function () {
+                const file = input.files[0];
+                let s = prompt(`您要将《${file.name}》上传到哪个目录？`);
+                if (!s) {
+                    return;
+                }
+                if (!s.endsWith('/')) {
+                    s += '/';
+                }
+                // 调用 结果会追加到 session 的回复 这里不需要处理结果！
+                client.uploadFile(file, s);
+                // 焦点移动到输入框
+                document.querySelector(".xterm-viewport").click();
+            };
+            input.click();
+        })
+
+        document.querySelector("#buttonList_downFile").addEventListener("click", function (e) {
+            let s = prompt(`您要将下载哪个文件？（输入路径）`);
+            if (!s) {
+                return;
+            }
+            client.download(s);
+            // 焦点移动到输入框
+            document.querySelector(".xterm-viewport").click();
+        })
 
         function resizeTerminal() {
             const element = document.getElementById('terminal');

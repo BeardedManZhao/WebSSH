@@ -39,7 +39,7 @@
     background: url("../image/backImage3.jpg") no-repeat center;
     background-size: cover;
     color: #04ff5c;
-    font-family: courier-new, courier, monospace;
+    font-family: courier-new, courier, monospace, 'icomoon';
     font-feature-settings: "liga" 0;
     position: relative;
     user-select: none;
@@ -142,6 +142,52 @@
 .xterm-viewport {
     overflow-y: auto;
     transition: all 0.3s ease-in-out; /* 添加过渡效果 */
+}
+
+/* WebKit 浏览器（如 Chrome 和 Safari） */
+.xterm-viewport::-webkit-scrollbar {
+    width: 6px; /* 滚动条宽度 */
+}
+
+.xterm-viewport::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3); /* 滚动条轨道背景色，黑色透明度30% */
+}
+
+.xterm-viewport::-webkit-scrollbar-thumb {
+    background: green; /* 滚动条滑块颜色 */
+    border-radius: 3px; /* 滑块圆角 */
+}
+
+.xterm-viewport::-webkit-scrollbar-thumb:hover {
+    background: darkgreen; /* 滑块悬停颜色 */
+}
+
+/* Firefox */
+.xterm-viewport {
+    scrollbar-width: thin; /* 滚动条宽度 */
+    scrollbar-color: green rgba(0, 0, 0, 0.3); /* 滑块颜色 轨道颜色 */
+}
+
+/* IE 和 Edge */
+.xterm-viewport {
+    -ms-overflow-style: auto; /* 显示滚动条 */
+}
+
+.xterm-viewport::-ms-scrollbar {
+    width: 6px; /* 滚动条宽度 */
+}
+
+.xterm-viewport::-ms-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3); /* 滚动条轨道背景色，黑色透明度30% */
+}
+
+.xterm-viewport::-ms-scrollbar-thumb {
+    background: green; /* 滚动条滑块颜色 */
+    border-radius: 3px; /* 滑块圆角 */
+}
+
+.xterm-viewport::-ms-scrollbar-thumb:hover {
+    background: darkgreen; /* 滑块悬停颜色 */
 }
 
 /* 当 xterm-viewport 被悬停时应用模糊效果 */
@@ -2271,4 +2317,36 @@
 
 .terminal .xterm-bg-color-255 {
     background-color: #eeeeee;
+}
+
+#buttonList {
+    position: absolute;
+    z-index: 2;
+    right: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 右对齐按钮 */
+}
+
+#buttonList > button {
+    display: block;
+    font-size: 20px;
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #7fff76;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(66, 66, 66, 0.4);
+    transition: all 300ms ease-in-out;
+    font-family: icomoon, serif;
+    cursor: pointer;
+}
+
+#buttonList > button:hover {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(0, 255, 118, 0.4);
+    width: 80px;
+    color: #ffffff;
 }

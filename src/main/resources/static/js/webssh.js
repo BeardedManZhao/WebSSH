@@ -1,50 +1,119 @@
-function WSSHClient() {
-    console.info("                  .-') _                   .-') _ \s\n                 ( OO ) )                 ( OO ) )\s\n .-'),-----. ,--./ ,--,'  .-'),-----. ,--./ ,--,' \s\n( OO'  .-.  '|   \\ |  |\\ ( OO'  .-.  '|   \\ |  |\\ \s\n/   |  | |  ||    \\|  | )/   |  | |  ||    \\|  | )\s\n\\_) |  |\\|  ||  .     |/ \\_) |  |\\|  ||  .     |/ \s\n  \\ |  | |  ||  |\\    |    \\ |  | |  ||  |\\    |  \s\n   `'  '-'  '|  | \\   |     `'  '-'  '|  | \\   |  \s\n     `-----' `--'  `--'       `-----' `--'  `--'  \s\n                     welcome to OnOn-WebSSH~~~~~")
-}
-
-WSSHClient.prototype._generateEndpoint = function () {
-    const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
-    return protocol + window.location.host + '/webssh';
-};
-
-WSSHClient.prototype.connect = function (options) {
-    const endpoint = this._generateEndpoint();
-
-    if (window.WebSocket) {
-        //如果支持websocket
-        this._connection = new WebSocket(endpoint);
-    } else {
-        //否则报错
-        options.onError('WebSocket Not Supported');
-        return;
+class WSSHClient {
+    constructor() {
+        console.info("                  .-') _                   .-') _ \s\n                 ( OO ) )                 ( OO ) )\s\n .-'),-----. ,--./ ,--,'  .-'),-----. ,--./ ,--,' \s\n( OO'  .-.  '|   \\ |  |\\ ( OO'  .-.  '|   \\ |  |\\ \s\n/   |  | |  ||    \\|  | )/   |  | |  ||    \\|  | )\s\n\\_) |  |\\|  ||  .     |/ \\_) |  |\\|  ||  .     |/ \s\n  \\ |  | |  ||  |\\    |    \\ |  | |  ||  |\\    |  \s\n   `'  '-'  '|  | \\   |     `'  '-'  '|  | \\   |  \s\n     `-----' `--'  `--'       `-----' `--'  `--'  \s\n                     welcome to OnOn-WebSSH~~~~~");
+        this.isBinarySend = false;
     }
 
-    this._connection.onopen = function () {
-        options.onConnect();
-    };
+    static getSplitChar() {
+        return ',';
+    }
 
-    this._connection.onmessage = function (evt) {
-        const data = evt.data.toString();
-        //data = base64.decode(data);
-        options.onData(data);
-    };
+    setUUID(uuid) {
+        this._uuid = uuid;
+    }
 
+    getUUID() {
+        return this._uuid;
+    }
 
-    this._connection.onclose = function () {
-        options.onClose();
-    };
-};
+    _generateEndpoint() {
+        const protocol = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
+        return protocol + window.location.host + '/webssh';
+    }
 
-WSSHClient.prototype.send = function (data) {
-    this._connection.send(JSON.stringify(data));
-};
+    connect(options) {
+        const endpoint = this._generateEndpoint();
+        if (window.WebSocket) {
+            this._connection = new WebSocket(endpoint);
+        } else {
+            options.onError('WebSocket Not Supported');
+            return;
+        }
 
-WSSHClient.prototype.sendInitData = function (options) {
-    //连接参数
-    this._connection.send(JSON.stringify(options));
-}
+        this._connection.onopen = (event) => {
+            options.onConnect();
+        };
 
-WSSHClient.prototype.sendClientData = function (data) {
-    //发送指令
-    this._connection.send(JSON.stringify({"operate": "command", "command": data}))
+        this._connection.onmessage = (evt) => {
+            const data = evt.data.toString();
+            if (data.startsWith("OnOnWebSsh-20030806-")) {
+                const s = data.substring("OnOnWebSsh-20030806-".length, data.length);
+                if (s.startsWith("show_uuid")) {
+                    this.setUUID(s.substring("show_uuid".length, s.length));
+                    console.info(this.getUUID());
+                }
+                switch (s) {
+                    case "sftp_upload":
+                        if (this.isBinarySend) {
+                            this.isBinarySend = false;
+                            // 调出控制台
+                            this.sendClientData("\r\n");
+                        } else {
+                            this.isBinarySend = true;
+                            options.onData("文件开始上传，请耐心等待!!!\r\n");
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                return;
+            }
+            options.onData(data);
+        };
+
+        this._connection.onclose = () => {
+            options.onClose();
+        };
+    }
+
+    send(data) {
+        this._connection.send(JSON.stringify(data));
+    }
+
+    sendInitData(options) {
+        this._connection.send(JSON.stringify(options));
+    }
+
+    sendClientData(data, errorCallback) {
+        if (data instanceof Blob) {
+            this._connection.send(data);
+        } else {
+            if (this.isBinarySend) {
+                errorCallback("有文件正在传输中，请等待文件传输结束！\r\n");
+                return;
+            }
+            this._connection.send(JSON.stringify({operate: "command", command: data}));
+        }
+    }
+
+    /**
+     * 文件上传
+     * @param file 需要被上传的文件
+     * @param wordDir 被上传文件要存储在哪里
+     */
+    async uploadFile(file, wordDir) {
+        if (!file) {
+            return;
+        }
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('wordDir', wordDir);
+        formData.append('uuid', this.getUUID());
+
+        try {
+            await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    download(filePath) {
+        const number = filePath.lastIndexOf('/');
+        const fileName = filePath.substring(number + 1);
+        const dirPath = filePath.substring(0, number);
+        window.open(`download?uuid=${this.getUUID()}&dirPath=${dirPath}&fileName=${fileName}`);
+    }
 }

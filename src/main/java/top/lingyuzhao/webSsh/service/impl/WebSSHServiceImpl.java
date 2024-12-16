@@ -1,31 +1,32 @@
 package top.lingyuzhao.webSsh.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jcraft.jsch.JSchException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
-import top.lingyuzhao.utils.SSHClient;
 import top.lingyuzhao.webSsh.constant.ConstantPool;
+import top.lingyuzhao.webSsh.constant.OperateHandler;
 import top.lingyuzhao.webSsh.pojo.SSHConnectInfo;
 import top.lingyuzhao.webSsh.pojo.WebSSHData;
 import top.lingyuzhao.webSsh.service.WebSSHService;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
+import java.io.InputStream;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 
 @Service
 public class WebSSHServiceImpl implements WebSSHService {
+    /**
+     * 存放每个会话上一次执行的操作记录
+     */
+    private static final Map<String, String> optionMap = new HashMap<>();
     //存放ssh连接信息的map
-    private static final Map<String, Object> sshMap = new ConcurrentHashMap<>();
-
+    private final Map<String, Object> sshMap = new ConcurrentHashMap<>();
     private final Logger logger = LoggerFactory.getLogger(WebSSHServiceImpl.class);
-
 
     @Override
     public void initConnection(WebSocketSession session) {
@@ -37,7 +38,7 @@ public class WebSSHServiceImpl implements WebSSHService {
     }
 
     @Override
-    public void recvHandle(String buffer, WebSocketSession session) {
+    public void recHandle(String buffer, WebSocketSession session) {
         ObjectMapper objectMapper = new ObjectMapper();
         WebSSHData webSSHData;
         try {
@@ -48,80 +49,72 @@ public class WebSSHServiceImpl implements WebSSHService {
             return;
         }
         String userId = String.valueOf(session.getAttributes().get(ConstantPool.USER_UUID_KEY));
-        switch (webSSHData.getOperate()) {
-            case ConstantPool.WEBSSH_OPERATE_CONNECT -> {
-                //找到刚才存储的ssh连接对象
-                SSHConnectInfo sshConnectInfo = (SSHConnectInfo) sshMap.get(userId);
-                if (sshConnectInfo.getSshClient() != null) {
-                    close(session);
-                }
-                //启动线程异步处理
-                try {
-                    connectToSSH(sshConnectInfo, webSSHData, session);
-                } catch (JSchException | IOException e) {
-                    logger.error("web ssh连接异常");
-                    logger.error("异常信息:{}", e.getMessage());
-                    close(session);
-                    try {
-                        session.close();
-                    } catch (IOException ignored) {
-
-                    }
-                }
-            }
-            case ConstantPool.WEBSSH_OPERATE_COMMAND -> {
-                String command = webSSHData.getCommand();
-                SSHConnectInfo sshConnectInfo = (SSHConnectInfo) sshMap.get(userId);
-                if (sshConnectInfo != null) {
-                    try {
-                        final boolean b = sshConnectInfo.getSshClient().sendCommand(command);
-                        if (!b) {
-                            close(session);
-                            session.close();
-                        }
-                    } catch (IOException e) {
-                        logger.error("web ssh连接异常");
-                        logger.error("异常信息:{}", e.getMessage());
-                        close(session);
-                    }
-                }
-            }
-            default -> {
-                logger.error("不支持的操作");
-                close(session);
-            }
+        final OperateHandler operateHandler;
+        try {
+            String operate = webSSHData.getOperate();
+            operateHandler = OperateHandler.valueOf(operate);
+            optionMap.put(userId, operate);
+        } catch (IllegalArgumentException e) {
+            logger.error("不支持的操作类型 " + e.getMessage());
+            return;
         }
+
+        Object o = sshMap.get(userId);
+        // 首先检查当前的是否允许为 null
+        if (operateHandler.isNotAllowSshNull() && o == null) {
+            // 直接返回 不处理
+            return;
+        }
+        operateHandler.handlerText((SSHConnectInfo) o, webSSHData, session, logger, userId);
+    }
+
+    @Override
+    public void recHandle(InputStream inputStream, WebSocketSession session) {
+        // 获取到当前会话上一次的操作
+        String userId = String.valueOf(session.getAttributes().get(ConstantPool.USER_UUID_KEY));
+        String lastCommand = optionMap.get(userId);
+        if (lastCommand == null) {
+            logger.error("没有上一次的操作记录 " + userId);
+            // 不操作
+            return;
+        }
+        // 获取到操作处理器
+        final OperateHandler operateHandler;
+        try {
+            operateHandler = OperateHandler.valueOf(lastCommand);
+        } catch (IllegalArgumentException e) {
+            logger.error("不支持的操作类型 " + e.getMessage());
+            return;
+        }
+
+        // 获取到当前会话的ssh连接信息
+        Object o = sshMap.get(userId);
+        // 查是否允许为null
+        if (operateHandler.isNotAllowSshNull() && o == null) {
+            logger.error("ssh连接为null");
+            return;
+        }
+        operateHandler.handlerBinary((SSHConnectInfo) o, inputStream, session, logger, userId);
+    }
+
+    @Override
+    public SSHConnectInfo getSSHClient(String uuid) {
+        Object o = sshMap.get(uuid);
+        if (o == null) {
+            return null;
+        }
+        return (SSHConnectInfo) o;
     }
 
     @Override
     public void close(WebSocketSession session) {
         String userId = String.valueOf(session.getAttributes().get(ConstantPool.USER_UUID_KEY));
-        SSHConnectInfo sshConnectInfo = (SSHConnectInfo) sshMap.get(userId);
+        SSHConnectInfo sshConnectInfo = this.getSSHClient(userId);
         if (sshConnectInfo != null) {
             //断开连接
             sshConnectInfo.close();
             //map中移除
             sshMap.remove(userId);
         }
-    }
-
-    private void connectToSSH(SSHConnectInfo sshConnectInfo, WebSSHData webSSHData, WebSocketSession webSocketSession) throws JSchException, IOException {
-        final SSHClient sshClient = new SSHClient(
-                webSSHData.getUsername(),
-                webSSHData.getHost(),
-                webSSHData.getPassword(),
-                webSSHData.getPort(),
-                null,
-                buffer -> {
-                    try {
-                        webSocketSession.sendMessage(new TextMessage(buffer));
-                    } catch (IllegalStateException | IOException ignored) {
-                        // 这里出现错误一般是因为 客户端断开了连接 并非大错误
-                    }
-                },
-                Charset.defaultCharset()
-        );
-        sshClient.connect(3000);
-        sshConnectInfo.setSshClient(sshClient);
     }
 }

@@ -5,7 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f257d49-fe2e-4f69-9fe1-280abcbcaff0" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/config/FileProgressMonitorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/config/OnOnWebSshPro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/constant/FileProgressMonitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/constant/OperateHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/controller/FileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/Read Me.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/demo-files/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/demo-files/demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/icomoon.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/icomoon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/icomoon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/icomoon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/selection.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/constant/ConstantPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/constant/ConstantPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/interceptor/WebSocketInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/interceptor/WebSocketInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/service/WebSSHService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/service/WebSSHService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/service/impl/WebSSHServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/service/impl/WebSSHServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/websocket/WebSSHWebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/websocket/WebSSHWebSocketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/xterm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/xterm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/webssh.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/webssh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webssh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/webssh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/xterm.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/xterm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/webssh.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/webssh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/webssh.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/webssh.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +52,8 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -39,7 +76,6 @@
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="vmOptionsForImporter" value="-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true" />
-        <option name="workspaceImportForciblyTurnedOn" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -73,13 +109,15 @@
     &quot;Spring Boot.WebSSHStarter.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/MyGithub/WebSSH/src/main/resources/static/js&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/MyGithub/WebSSH/src/main/resources/static/css&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;工件&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
@@ -88,14 +126,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\MyGithub\WebSSH\src\main\resources\static\js" />
       <recent name="F:\MyGithub\WebSSH\src\main\resources\static\css" />
+      <recent name="F:\MyGithub\WebSSH\src\main\resources\static" />
+      <recent name="F:\MyGithub\WebSSH\src\main\resources\static\js" />
       <recent name="F:\MyGithub\WebSSH\src\main\resources\static\image" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\MyGithub\WebSSH" />
       <recent name="F:\MyGithub\WebSSH\src\main\resources\static" />
       <recent name="F:\MyGithub\WebSSH\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="top.lingyuzhao.webSsh.config" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -137,13 +179,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -173,6 +208,10 @@
       <workItem from="1734159584514" duration="402000" />
       <workItem from="1734172432072" duration="4285000" />
       <workItem from="1734179479923" duration="1055000" />
+      <workItem from="1734322383571" duration="3782000" />
+      <workItem from="1734333501898" duration="746000" />
+      <workItem from="1734342171682" duration="568000" />
+      <workItem from="1734344336881" duration="24464000" />
     </task>
     <servers />
   </component>

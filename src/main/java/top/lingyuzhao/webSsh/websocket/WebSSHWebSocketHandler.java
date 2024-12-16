@@ -7,15 +7,16 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
-import org.springframework.web.socket.handler.TextWebSocketHandler;
+import org.springframework.web.socket.handler.AbstractWebSocketHandler;
 import top.lingyuzhao.webSsh.constant.ConstantPool;
+import top.lingyuzhao.webSsh.constant.OperateHandler;
 import top.lingyuzhao.webSsh.service.WebSSHService;
 
 /**
  * 处理websocket请求
  */
 @Component
-public class WebSSHWebSocketHandler extends TextWebSocketHandler {
+public class WebSSHWebSocketHandler extends AbstractWebSocketHandler {
     private final WebSSHService webSSHService;
     private final Logger logger = LoggerFactory.getLogger(WebSSHWebSocketHandler.class);
 
@@ -41,11 +42,13 @@ public class WebSSHWebSocketHandler extends TextWebSocketHandler {
         logger.info("用户:{},连接WebSSH", webSocketSession.getAttributes().get(ConstantPool.USER_UUID_KEY));
         //调用初始化连接
         webSSHService.initConnection(webSocketSession);
+        // uuid 返回
+        OperateHandler.show_uuid.handlerText(null, null, webSocketSession, logger, String.valueOf(webSocketSession.getAttributes().get(ConstantPool.USER_UUID_KEY)));
     }
 
     @Override
     protected void handleTextMessage(@NonNull WebSocketSession session, TextMessage message) {
-        webSSHService.recvHandle(message.getPayload(), session);
+        webSSHService.recHandle(message.getPayload(), session);
     }
 
     @Override
