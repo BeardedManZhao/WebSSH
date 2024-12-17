@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f257d49-fe2e-4f69-9fe1-280abcbcaff0" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webssh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/webssh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,6 +179,7 @@
       <workItem from="1734342171682" duration="568000" />
       <workItem from="1734344336881" duration="24529000" />
       <workItem from="1734395474984" duration="288000" />
+      <workItem from="1734395850360" duration="1562000" />
     </task>
     <servers />
   </component>
