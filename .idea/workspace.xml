@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f257d49-fe2e-4f69-9fe1-280abcbcaff0" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/config/SecureConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/config/FileProgressMonitorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/config/FileProgressMonitorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/config/OnOnWebSshPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/config/OnOnWebSshPro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/constant/OperateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/constant/OperateHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/websocket/WebSSHWebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/websocket/WebSSHWebSocketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/xterm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/xterm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webssh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/webssh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/WebSSH.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebSSH.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/xterm.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/xterm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/webssh.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/webssh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,36 +76,36 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Maven.WebSSH [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WebSSH [package].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.WebSSHStarter (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.WebSSHStarter.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/MyGithub/WebSSH/src/main/resources/static/css&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Maven.WebSSH [clean].executor": "Run",
+    "Maven.WebSSH [package].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.WebSSHStarter (1).executor": "Run",
+    "Spring Boot.WebSSHStarter.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "F:/MyGithub/LS-WebBackEnd",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
+    "project.structure.last.edited": "项目",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\MyGithub\WebSSH\src\main\resources\static\css" />
@@ -180,6 +196,7 @@
       <workItem from="1734344336881" duration="24529000" />
       <workItem from="1734395474984" duration="288000" />
       <workItem from="1734395850360" duration="1562000" />
+      <workItem from="1734425394509" duration="9925000" />
     </task>
     <servers />
   </component>

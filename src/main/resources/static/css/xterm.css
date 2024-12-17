@@ -173,23 +173,6 @@
     -ms-overflow-style: auto; /* 显示滚动条 */
 }
 
-.xterm-viewport::-ms-scrollbar {
-    width: 6px; /* 滚动条宽度 */
-}
-
-.xterm-viewport::-ms-scrollbar-track {
-    background: rgba(0, 0, 0, 0.3); /* 滚动条轨道背景色，黑色透明度30% */
-}
-
-.xterm-viewport::-ms-scrollbar-thumb {
-    background: green; /* 滚动条滑块颜色 */
-    border-radius: 3px; /* 滑块圆角 */
-}
-
-.xterm-viewport::-ms-scrollbar-thumb:hover {
-    background: darkgreen; /* 滑块悬停颜色 */
-}
-
 /* 当 xterm-viewport 被悬停时应用模糊效果 */
 .xterm-viewport:hover {
     background: rgba(0, 0, 0, 0.6);

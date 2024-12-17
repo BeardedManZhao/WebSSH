@@ -43,11 +43,6 @@ public class FileController {
 
     @PostMapping("/upload")
     public void upload(@RequestParam("file") MultipartFile file, @RequestParam("wordDir") String wordDir, @RequestParam("uuid") String uuid) {
-        if (file.isEmpty()) {
-            logger.warn("上传的文件为空");
-            return;
-        }
-
         // 提取文件名
         String originalFilename = file.getOriginalFilename();
         if (originalFilename == null) {
@@ -65,8 +60,6 @@ public class FileController {
 
         try (InputStream inputStream = file.getInputStream()) {
             sshClient.sendFile(wordDir, inputStream, originalFilename, new FileProgressMonitor(sshConnectInfo.getWebSocketSession(), file.getSize(), this.onOnWebSshPro), null, null);
-            // 调出命令行
-            sshClient.sendCommand("\r\n");
         } catch (IOException e) {
             logger.error("文件上传失败", e);
             try {

@@ -100,19 +100,33 @@
         document.querySelector("#buttonList_sendFile").addEventListener("click", function (_) {
             const input = document.createElement("input");
             input.type = "file";
+            input.multiple = true;
             input.onchange = function () {
-                const file = input.files[0];
-                let s = prompt(`您要将《${file.name}》上传到哪个目录？`);
+                const files = input.files;
+
+                if (!files || files.length === 0){
+                    return;
+                }
+                let s = prompt(`您要将选中的 ${files.length} 个文件上传到哪个目录？`);
                 if (!s) {
                     return;
                 }
                 if (!s.endsWith('/')) {
                     s += '/';
                 }
-                // 调用 结果会追加到 session 的回复 这里不需要处理结果！
-                client.uploadFile(file, s);
-                // 焦点移动到输入框
-                document.querySelector(".xterm-viewport").click();
+                let index = 0;
+                const interval = setInterval(() => {
+                    if (index === files.length){
+                        clearInterval(interval);
+                        // 调出命令行
+                        client.sendClientData("\r\n");
+                        document.querySelector(".xterm").focus();
+                        return;
+                    }
+                    const file = files[index++];
+                    // 调用 结果会追加到 session 的回复 这里不需要处理结果！
+                    client.uploadFile(file, s);
+                }, 100);
             };
             input.click();
         })
@@ -123,8 +137,8 @@
                 return;
             }
             client.download(s);
-            // 焦点移动到输入框
-            document.querySelector(".xterm-viewport").click();
+            // 焦点离开
+            document.querySelector(".xterm").focus();
         })
 
         function resizeTerminal() {

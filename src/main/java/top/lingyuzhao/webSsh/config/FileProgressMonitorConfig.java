@@ -18,4 +18,11 @@ public class FileProgressMonitorConfig {
     public void setUpdateThreshold(long updateThreshold) {
         this.updateThreshold = updateThreshold;
     }
+
+    @Override
+    public String toString() {
+        return "FileProgressMonitorConfig{" +
+                "updateThreshold=" + updateThreshold +
+                '}';
+    }
 }

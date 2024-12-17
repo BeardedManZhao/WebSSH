@@ -6,6 +6,7 @@ import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import top.lingyuzhao.utils.ConsoleColor;
 import top.lingyuzhao.utils.SSHClient;
+import top.lingyuzhao.webSsh.config.OnOnWebSshPro;
 import top.lingyuzhao.webSsh.pojo.SSHConnectInfo;
 import top.lingyuzhao.webSsh.pojo.WebSSHData;
 
@@ -41,6 +42,12 @@ public enum OperateHandler {
     },
     connect(false) {
         private void connectToSSH(SSHConnectInfo sshConnectInfo, WebSSHData webSSHData, WebSocketSession webSocketSession) throws JSchException, IOException {
+            if (!onOnWebSshPro.getSecureConfig().destIpIsValid(webSSHData.getHost())) {
+                webSSHData.setCommand("非法的目标IP！服务器管理员设置了规则，拒绝您 ssh 到目标IP：" + webSSHData.getHost());
+                error.handlerText(sshConnectInfo, webSSHData, webSocketSession, null, null);
+                close(webSocketSession);
+                return;
+            }
             final SSHClient sshClient = new SSHClient(
                     webSSHData.getUsername(),
                     webSSHData.getHost(),
@@ -101,16 +108,44 @@ public enum OperateHandler {
                 logger.warn(session.getId() + " " + this.name() + " error~ ", e);
             }
         }
+    },
+    error(false) {
+        @Override
+        public void handlerText(SSHConnectInfo sshConnectInfo, WebSSHData textMessage, WebSocketSession session, Logger logger, String userId) {
+            try {
+                session.sendMessage(new TextMessage(ConsoleColor.ANSI_RED + "[OnOn-WebSsh] 错误信息：" + textMessage.getCommand() + "\r\n"));
+            } catch (IOException e) {
+                if (logger != null) {
+                    logger.warn(session.getId() + " " + this.name() + " error~", e);
+                }
+            }
+        }
+    },
+    info(false) {
+        @Override
+        public void handlerText(SSHConnectInfo sshConnectInfo, WebSSHData textMessage, WebSocketSession session, Logger logger, String userId) {
+            try {
+                session.sendMessage(new TextMessage(ConsoleColor.ANSI_GREEN + "[OnOn-WebSsh] " + textMessage.getCommand() + "\r\n"));
+            } catch (IOException e) {
+                if (logger != null) {
+                    logger.warn(session.getId() + " " + this.name() + " error~", e);
+                }
+            }
+        }
     };
 
+    protected static OnOnWebSshPro onOnWebSshPro;
     protected final String responseStrMessage;
     protected final TextMessage responseTextMessage;
     private final boolean allowSshNull;
-
     OperateHandler(boolean allowSshNull) {
         this.allowSshNull = allowSshNull;
         this.responseStrMessage = "OnOnWebSsh-20030806-" + this.name();
         this.responseTextMessage = new TextMessage(this.responseStrMessage);
+    }
+
+    public static void setOnOnWebSshPro(OnOnWebSshPro onOnWebSshPro) {
+        OperateHandler.onOnWebSshPro = onOnWebSshPro;
     }
 
     public abstract void handlerText(SSHConnectInfo sshConnectInfo, WebSSHData textMessage, WebSocketSession session, Logger logger, String userId);

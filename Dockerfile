@@ -18,7 +18,15 @@ ENV LANG=zh_CN.UTF-8 \
     LC_ALL=zh_CN.UTF-8
 
 # 开始构建！
-VOLUME /tmp
-ADD ./target/WebSSH.jar app.jar
+RUN mkdir "/opt/OnOnWebSsh/"
+
+WORKDIR /opt/OnOnWebSsh
+
+ADD ./target/WebSSH.jar ./app.jar
+COPY ./src/main/resources/config ./config
+
+# 开权限
+RUN chmod -R 777 /opt/OnOnWebSsh
+
 EXPOSE 8080
-ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-Dspring.config.location=/config/", "-jar", "/app.jar"]
+ENTRYPOINT ["sh", "-c", "echo '欢迎~ 您如果需要修改配置，可以使用 exec 模式，进入到 【/opt/OnOnWebSsh/config】 目录进行修改~ 然后重启容器就可以啦' && java -Djava.security.egd=file:/dev/./urandom -Dspring.config.location=./config/ -jar ./app.jar"]

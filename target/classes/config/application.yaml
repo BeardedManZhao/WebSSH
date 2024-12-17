@@ -8,10 +8,10 @@ spring:
     multipart:
       # 指定临时文件的存储位置
       # 注意：此目录必须存在，并且应用程序应具有写入权限
-      location: /opt/app/diskMirror-spring-boot/temp
+      location: /opt/OnOnWebSsh/temp
       # 指定临时文件的位置（与location配置相同）
       # 这个配置在较新版本的Spring中可能不是必需的
-      # temp-location: /opt/app/diskMirror-spring-boot/temp
+      # temp-location: /opt/OnOnWebSsh/temp
       # 单个文件的最大大小
       max-file-size: 1024MB
       # 整个请求中所有文件的总大小的最大值，默认值为多部分数据的最大大小
@@ -39,3 +39,9 @@ on-on-web-ssh:
   file-progress-monitor-config:
     # 文件上传时，每上传多少字节就打印一次进度 这里是 8MB
     update-threshold: 8388608
+  # 安全设置
+  secure-config:
+    # 源IP地址匹配模式
+    src-ip-pattern: "(10(\\.[0-9]{1,3}){3}|172\\.(1[6-9]|2[0-9]|3[0-1])(\\.[0-9]{1,3}){2}|192\\.168(\\.[0-9]{1,3}){2})"
+    # 目标IP地址匹配模式 默认为空，表示不限制
+    # dest-ip-pattern: "(10(\\.[0-9]{1,3}){3}|172\\.(1[6-9]|2[0-9]|3[0-1])(\\.[0-9]{1,3}){2}|192\\.168(\\.[0-9]{1,3}){2})"
