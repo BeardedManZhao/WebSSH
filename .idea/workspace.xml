@@ -5,55 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f257d49-fe2e-4f69-9fe1-280abcbcaff0" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/config/FileProgressMonitorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/config/OnOnWebSshPro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/constant/FileProgressMonitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/constant/OperateHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/controller/FileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/Read Me.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/demo-files/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/demo-files/demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/icomoon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/icomoon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/icomoon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/icomoon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/selection.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/constant/ConstantPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/constant/ConstantPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/interceptor/WebSocketInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/interceptor/WebSocketInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/service/WebSSHService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/service/WebSSHService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/service/impl/WebSSHServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/service/impl/WebSSHServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/websocket/WebSSHWebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/websocket/WebSSHWebSocketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/xterm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/xterm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/webssh.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/webssh.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/webssh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/webssh.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebSSH.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/xterm.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/backImage3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/docker.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/favicon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/java.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery-3.4.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/webssh.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/xterm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/webssh.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,8 +107,8 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn package" />
       <command value="mvn clean" />
+      <command value="mvn package" />
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.WebSSHStarter (1)">
@@ -225,6 +177,7 @@
       <workItem from="1734333501898" duration="746000" />
       <workItem from="1734342171682" duration="568000" />
       <workItem from="1734344336881" duration="24529000" />
+      <workItem from="1734395474984" duration="288000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+spring:
+  # 配置 HTTP 多部分文件上传
+  servlet:
+    # 文件上传相关配置
+    multipart:
+      # 指定临时文件的存储位置
+      # 注意：此目录必须存在，并且应用程序应具有写入权限
+      location: /opt/app/diskMirror-spring-boot/temp
+      # 指定临时文件的位置（与location配置相同）
+      # 这个配置在较新版本的Spring中可能不是必需的
+      # temp-location: /opt/app/diskMirror-spring-boot/temp
+      # 单个文件的最大大小
+      max-file-size: 1024MB
+      # 整个请求中所有文件的总大小的最大值，默认值为多部分数据的最大大小
+      max-request-size: 1030MB
+      # 是否启用文件大小检查，默认为true
+      enabled: true
+      # 当文件大小超过这个阈值时，才会使用临时文件存储
+      file-size-threshold: 4MB
+  web:
+    resources:
+      static-locations: classpath:/static/
+
+logging:
+  level:
+    root: INFO
+  file:
+    name: logs/webssh.log
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+    file: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n'
+
+# OnOn WebSSH 配置
+on-on-web-ssh:
+  # 文件进度打印相关
+  file-progress-monitor-config:
+    # 文件上传时，每上传多少字节就打印一次进度 这里是 8MB
+    update-threshold: 8388608
