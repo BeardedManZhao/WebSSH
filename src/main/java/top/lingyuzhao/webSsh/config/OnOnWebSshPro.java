@@ -8,9 +8,11 @@ import top.lingyuzhao.webSsh.constant.OperateHandler;
 @ConfigurationProperties(prefix = "on-on-web-ssh")
 public class OnOnWebSshPro {
 
-    private FileProgressMonitorConfig fileProgressMonitorConfig;
+    private FileProgressMonitorConfig fileProgressMonitorConfig = new FileProgressMonitorConfig();
 
-    private SecureConfig secureConfig;
+    private SecureConfig secureConfig = new SecureConfig();
+
+    private StorageConfig storageConfig = new StorageConfig();
 
     public OnOnWebSshPro() {
         OperateHandler.setOnOnWebSshPro(this);
@@ -30,6 +32,14 @@ public class OnOnWebSshPro {
 
     public void setSecureConfig(SecureConfig secureConfig) {
         this.secureConfig = secureConfig;
+    }
+
+    public StorageConfig getStorageConfig() {
+        return storageConfig;
+    }
+
+    public void setStorageConfig(StorageConfig storageConfig) {
+        this.storageConfig = storageConfig;
     }
 
     @Override

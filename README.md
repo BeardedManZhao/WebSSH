@@ -1,6 +1,10 @@
 # OnOn-WebSsh springBoot 服务器
 
-OnOn-WebSsh 可实现 网页 中的 ssh 客户端操作，支持多用户多线程操作！！！！支持指定ssh 连接！！！
+> OnOn-WebSSH (On~On~ Lightweight WebSSH) enables SSH client operations within a web browser, supporting multi-user and
+> multithreaded operations. It allows for specified SSH connections and supports SFTP as well as persistent SSH sessions.
+
+OnOn-WebSsh (昂~昂~轻量级WebSSH) 可实现 网页 中的 ssh 客户端操作，支持多用户多线程操作, 支持指定ssh 连接, 支持sftp 以及
+ssh 持久化.
 
 官网：[访问官网页面](http://webssh.lingyuzhao.top:8080/about.html)
 
@@ -39,7 +43,13 @@ OnOn-WebSsh 可实现 网页 中的 ssh 客户端操作，支持多用户多线�
 
 ## 更新日志
 
-### 2024.12.17 版本开始开发
+### 2024.12.19 版本发布
+
+- 优化了配置文件中一些配置为空的时候的默认值设置，有效避免由于配置为null导致的程序无法启动的问题。
+- 优化了前端提示
+- 支持 ssh 配置的存储
+
+### 2024.12.17 版本发布
 
 - 新增文件上传与下载功能
 - 新增安全模块，实现登录鉴权，可按照正则指定源IP和目标IP允许规则，默认规则是允许所有内网设备 ssh 到所有设备！

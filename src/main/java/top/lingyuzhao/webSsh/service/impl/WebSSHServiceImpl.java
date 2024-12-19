@@ -1,10 +1,13 @@
 package top.lingyuzhao.webSsh.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.PreDestroy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.WebSocketSession;
+import top.lingyuzhao.webSsh.config.OnOnWebSshPro;
 import top.lingyuzhao.webSsh.constant.ConstantPool;
 import top.lingyuzhao.webSsh.constant.OperateHandler;
 import top.lingyuzhao.webSsh.pojo.SSHConnectInfo;
@@ -27,6 +30,14 @@ public class WebSSHServiceImpl implements WebSSHService {
     //存放ssh连接信息的map
     private final Map<String, Object> sshMap = new ConcurrentHashMap<>();
     private final Logger logger = LoggerFactory.getLogger(WebSSHServiceImpl.class);
+    private final ObjectMapper objectMapper;
+    private final OnOnWebSshPro onOnWebSshPro;
+
+    @Autowired
+    public WebSSHServiceImpl(ObjectMapper objectMapper, OnOnWebSshPro onOnWebSshPro) {
+        this.objectMapper = objectMapper;
+        this.onOnWebSshPro = onOnWebSshPro;
+    }
 
     @Override
     public void initConnection(WebSocketSession session) {
@@ -116,5 +127,10 @@ public class WebSSHServiceImpl implements WebSSHService {
             //map中移除
             sshMap.remove(userId);
         }
+    }
+
+    @PreDestroy
+    public void onDestroy() {
+        this.onOnWebSshPro.getStorageConfig().end(objectMapper);
     }
 }

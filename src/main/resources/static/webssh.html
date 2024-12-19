@@ -27,7 +27,7 @@
         params[kv[0]] = kv[1];
     });
     if (params.password) {
-        params.password = OnOnWebSSH.decode(params.password, true);
+        params.password = OnOnWebSSH.decode(params.password, window.location.href.concat("noUrlCode"));
     }
 
     function extracted(numberKey, defaultValue, stringValue) {
@@ -82,12 +82,16 @@
             onClose: function () {
                 //连接关闭回调
                 term.write("\rconnection closed\r\n");
-                term.write("\rAfter 5 seconds, return to the login interface\r\n");
+                term.write("\rReturn to the previous page after 5 seconds.\r\n");
                 let s = 4;
                 setInterval(() => {
-                    term.write(`\rAfter ${s} seconds, return to the login interface\r\n`);
+                    term.write(`\rReturn to the previous page after ${s} seconds.\r\n`);
                     if (s-- <= 0) {
-                        window.location.href = "index.html";
+                        if (window.history.length > 1) {
+                            history.back();
+                        } else {
+                            window.location.href = '/index.html';
+                        }
                     }
                 }, 1000);
             },

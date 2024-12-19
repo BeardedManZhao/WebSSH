@@ -42,6 +42,8 @@ public enum OperateHandler {
     },
     connect(false) {
         private void connectToSSH(SSHConnectInfo sshConnectInfo, WebSSHData webSSHData, WebSocketSession webSocketSession) throws JSchException, IOException {
+            // 尝试持久化处理
+            onOnWebSshPro.getStorageConfig().handler(webSSHData);
             if (!onOnWebSshPro.getSecureConfig().destIpIsValid(webSSHData.getHost())) {
                 webSSHData.setCommand("非法的目标IP！服务器管理员设置了规则，拒绝您 ssh 到目标IP：" + webSSHData.getHost());
                 error.handlerText(sshConnectInfo, webSSHData, webSocketSession, null, null);

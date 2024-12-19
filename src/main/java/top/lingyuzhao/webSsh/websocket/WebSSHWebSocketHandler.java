@@ -12,6 +12,7 @@ import org.springframework.web.socket.handler.AbstractWebSocketHandler;
 import top.lingyuzhao.utils.IOUtils;
 import top.lingyuzhao.webSsh.config.OnOnWebSshPro;
 import top.lingyuzhao.webSsh.config.SecureConfig;
+import top.lingyuzhao.webSsh.config.StorageConfig;
 import top.lingyuzhao.webSsh.constant.ConstantPool;
 import top.lingyuzhao.webSsh.constant.OperateHandler;
 import top.lingyuzhao.webSsh.pojo.WebSSHData;
@@ -28,12 +29,14 @@ public class WebSSHWebSocketHandler extends AbstractWebSocketHandler {
     private final Logger logger = LoggerFactory.getLogger(WebSSHWebSocketHandler.class);
 
     private final SecureConfig secureConfig;
+    private final StorageConfig storageConfig;
 
     @Autowired
     public WebSSHWebSocketHandler(WebSSHService webSSHService, OnOnWebSshPro onOnWebSshPro) {
         logger.info(onOnWebSshPro.toString());
         this.webSSHService = webSSHService;
         this.secureConfig = onOnWebSshPro.getSecureConfig();
+        this.storageConfig = onOnWebSshPro.getStorageConfig();
         logger.info("""
                                   
                                   .-') _                   .-') _ \s
@@ -57,8 +60,8 @@ public class WebSSHWebSocketHandler extends AbstractWebSocketHandler {
             return;
         }
         final String hostAddress = remoteAddress.getAddress().getHostAddress();
+        WebSSHData webSSHData = new WebSSHData();
         if (!secureConfig.srcIpIsValid(hostAddress)) {
-            WebSSHData webSSHData = new WebSSHData();
             webSSHData.setCommand("不允许您以IP " + hostAddress + " 访问此 WebSSH 服务，OnOnWebSsh 服务器管理员设置了允许访问 OnOnWebSsh的IP规则，您的IP不符合这个规则。");
             OperateHandler.error.handlerText(null, webSSHData, webSocketSession, logger, webSSHData.getCommand());
             IOUtils.close(webSocketSession);

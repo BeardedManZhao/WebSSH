@@ -60,4 +60,10 @@ public class WebSSHData {
     public void setCommand(String command) {
         this.command = command;
     }
+
+    @Override
+    public String toString() {
+        // 根据主机 用户名 端口号 生成唯一标识符
+        return username + '@' + host + ':' + port;
+    }
 }

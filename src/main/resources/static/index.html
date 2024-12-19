@@ -28,28 +28,30 @@
     <form action="webssh.html" id="loginForm">
         <div class="container">
             <label>
-                <input name="host" placeholder="目标主机IP">
+                <input name="host" placeholder="目标主机IP" title="要连接的目标主机的IP地址，你要控制谁呢？">
             </label>
         </div>
 
         <div class="container">
             <label>
-                <input name="port" placeholder="目标主机端口">
+                <input name="port" placeholder="目标主机端口" title="要连接的目标主机的端口，一般都是 22" value="22">
             </label>
         </div>
 
         <div class="container">
             <label>
-                <input name="username" placeholder="ssh 登录用户名">
+                <input name="username" placeholder="ssh 登录用户名" title="要以哪个用户名登录到目标主机？">
             </label>
         </div>
 
         <div class="container">
             <label>
-                <input id="webSshPassword" name="password" placeholder="ssh 登录密码" type="password">
+                <input id="webSshPassword" name="password" placeholder="ssh 登录密码"
+                       title="你选择的用户名对应的密码是什么？" type="password">
             </label>
         </div>
         <button type="submit">开始登录！</button>
+        <a class="button" href="seeSsh.html">从保存的ssh选择</a>
         <a class="button" href="about.html">关于webSsh</a>
     </form>
 </div>
