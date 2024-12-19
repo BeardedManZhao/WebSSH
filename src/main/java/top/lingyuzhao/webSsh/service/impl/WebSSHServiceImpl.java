@@ -5,6 +5,7 @@ import jakarta.annotation.PreDestroy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.WebSocketSession;
 import top.lingyuzhao.webSsh.config.OnOnWebSshPro;
@@ -129,8 +130,17 @@ public class WebSSHServiceImpl implements WebSSHService {
         }
     }
 
-    @PreDestroy
-    public void onDestroy() {
-        this.onOnWebSshPro.getStorageConfig().end(objectMapper);
+    /**
+     * 释放ssh配置模块信息！
+     */
+     @PreDestroy
+     public void onDestroy() {
+         logger.info("释放ssh配置信息模块~ 持久化数据！");
+         this.onOnWebSshPro.getStorageConfig().end(objectMapper);
+     }
+
+    @Scheduled(fixedRate = 3600000) // 每1小时执行一次
+    public void scheduledCleanup() {
+        this.onDestroy();
     }
 }

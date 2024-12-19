@@ -2,10 +2,12 @@ package top.lingyuzhao.webSsh.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import top.lingyuzhao.webSsh.constant.OperateHandler;
 
 @Configuration
 @ConfigurationProperties(prefix = "on-on-web-ssh")
+@EnableScheduling
 public class OnOnWebSshPro {
 
     private FileProgressMonitorConfig fileProgressMonitorConfig = new FileProgressMonitorConfig();

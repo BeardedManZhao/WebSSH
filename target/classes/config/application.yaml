@@ -48,6 +48,6 @@ on-on-web-ssh:
   # 数据持久化设置
   storage-config:
     # 启用持久化模块 如果不启用 则全程将不会进行ssh数据的记录 (但是全程可以读取哦!)
-    enable-writer: false
+    enable-writer: true
     # 持久化目录
     storage-dir: storage
