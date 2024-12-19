@@ -30,7 +30,7 @@ ssh 持久化.
 
 > 如果有 java8 的需求，可以直接在 `pom.xml` 中为 springBoot 降级！但这会降低一些性能哦！因为 java17 的性能比 java8 更高。
 
-您可以[点击这里](https://github.com/BeardedManZhao/CodeBookWebSsh/releases/download/2024.12.14/WebSSH.jar) 下载网站服务包。
+您可以[点击这里](https://github.com/BeardedManZhao/WebSSH/releases) 下载网站服务包。
 
 ### 2. 启动服务包
 
