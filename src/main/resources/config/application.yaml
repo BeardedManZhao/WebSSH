@@ -51,3 +51,8 @@ on-on-web-ssh:
     enable-writer: true
     # 持久化目录
     storage-dir: storage
+  # 定时设置
+  scheduled:
+    # 设置 ssh 信息存储的时间间隔
+    ssh-storage:
+      interval: 3600000

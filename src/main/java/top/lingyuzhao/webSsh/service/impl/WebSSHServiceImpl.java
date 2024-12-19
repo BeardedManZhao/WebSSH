@@ -139,7 +139,7 @@ public class WebSSHServiceImpl implements WebSSHService {
          this.onOnWebSshPro.getStorageConfig().end(objectMapper);
      }
 
-    @Scheduled(fixedRate = 3600000) // 每1小时执行一次
+    @Scheduled(fixedRateString = "${on-on-web-ssh.scheduled.ssh-storage.interval}")
     public void scheduledCleanup() {
         this.onDestroy();
     }
