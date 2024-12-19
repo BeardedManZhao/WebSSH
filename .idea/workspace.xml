@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6f257d49-fe2e-4f69-9fe1-280abcbcaff0" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/config/OnOnWebSshPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/config/OnOnWebSshPro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/service/impl/WebSSHServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lingyuzhao/webSsh/service/impl/WebSSHServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/WebSSH.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/WebSSH.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +184,7 @@
       <workItem from="1734582224948" duration="1115000" />
       <workItem from="1734588386244" duration="10733000" />
       <workItem from="1734599442535" duration="9000" />
-      <workItem from="1734599484306" duration="655000" />
+      <workItem from="1734599484306" duration="990000" />
     </task>
     <servers />
   </component>
