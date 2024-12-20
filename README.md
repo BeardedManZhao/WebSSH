@@ -6,7 +6,7 @@
 OnOn-WebSsh (昂~昂~轻量级WebSSH) 可实现 网页 中的 ssh 客户端操作，支持多用户多线程操作, 支持指定ssh 连接, 支持sftp 以及
 ssh 持久化.
 
-官网：[访问官网页面](http://webssh.lingyuzhao.top:8080/about.html)
+官网：[访问官网页面](http://webssh.lingyuzhao.top:8082/about.html)
 
 # 社区 qq 群
 
@@ -20,7 +20,7 @@ ssh 持久化.
 
 ![image](https://github.com/user-attachments/assets/f4f75238-ddc8-4117-9400-70d09b422ecd)
 
-**我（lingYuZhao）提供了在线使用网站**：[点击访问 WebSsh 在线](http://webssh.lingyuzhao.top:8080)
+**我（lingYuZhao）提供了在线使用网站**：[点击访问 WebSsh 在线](http://webssh.lingyuzhao.top:8082)
 
 ## 关于手动部署
 
