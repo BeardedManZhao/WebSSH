@@ -1,0 +1,131 @@
+.container {
+    width: auto;
+    margin: 2vh 2vh 2vh 2vh;
+    padding: 2vw;
+    background-color: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.1);
+    border-radius: 1vw;
+    box-sizing: border-box;
+    transition: all 0.6s ease-in-out;
+}
+
+/* 每个动态的基本尺寸 */
+.container .container_td {
+    width: 30vh;
+    padding: 3vh;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: inline-block;
+    white-space: normal;
+    word-wrap: break-word;
+    margin: 1%;
+    text-align: left;
+    transition: all 0.2s ease-in-out;
+}
+
+.container table.container_table {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+/* 未选中样式 */
+.container .container_td .container_a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.container .container_td .container_a,
+.container .container_td .container_a * {
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+/* 焦点获取样式 */
+.container .container_td:hover {
+    transform: translateY(-2vh);
+    background-color: #190d46;
+    box-shadow: 1vw 1vw rgba(0, 0, 0, 0.52);
+}
+
+.container .container_td .container_a:hover,
+.container .container_td .container_a:hover > * {
+    color: #FFFFFF;
+}
+
+.container .container_td .headSculpture_span {
+    display: inline-block;
+    width: 60%;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-decoration: none;
+    text-overflow: ellipsis;
+}
+
+/* 动态的宣传图 */
+.container .container_td > a > .data_image_img_publicize {
+    width: 100%;
+    height: 16vh;
+}
+
+/* 动态列表中的每行 */
+.container tr {
+    text-align: center;
+}
+
+.container .container_td * {
+    font-size: 1.5vh;
+    color: #483b3b;
+}
+
+/* 发布日期 */
+.container .container_td > a > .data_create_date {
+    font-size: 1vh;
+}
+
+/* 动态标题 */
+.container .container_td > a > .data_title_h {
+    font-size: 2vh;
+    text-align: left;
+}
+
+/* 动态简介 */
+.container .container_td > a > pre {
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+    font-size: 1.2vh;
+}
+
+/* 动态发布者头像 */
+.container .headSculpture {
+    width: 4vw;
+    height: 4vw;
+    max-width: 45px;
+    max-height: 45px;
+    float: left;
+    border-radius: 50%;
+}
+
+/* 动态发布者名字 */
+.headSculpture_span {
+    display: inline-block;
+    line-height: 3vw;
+    font-family: "Arial Black", "icomoon", sans-serif, serif;
+    margin-left: 1vw;
+    text-align: left;
+    /* 超出隐藏 不换行 自动省略 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 地区位置显示文字 */
+.container .container_td .area_span {
+    float: right;
+    font-size: 1vh;
+    color: #7777;
+}
