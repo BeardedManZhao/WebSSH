@@ -1,0 +1,377 @@
+/* 网站背景图 */
+body {
+    color: #2d2d2d;
+    background-size: 100% 100%;
+}
+
+body, html {
+    margin: 0;
+}
+
+/* 元素平均布局 */
+.profile-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 元素平均布局 - 子元素 */
+.profile-info-item {
+    display: flex;
+    align-items: center;
+}
+
+/* 版心 宽度为 70% 且水平居中 圆角边缘 */
+.w_h {
+    width: 70%;
+    margin: 10px 15%;
+    border-radius: 20px;
+}
+
+/* logo图标显示规则 */
+#logo .logo #ud_logo {
+    vertical-align: middle;
+    margin-bottom: -5px
+}
+
+/* 页面标题显示规则 */
+#web-title .web-title #ud_web-title {
+    display: inline-block;
+    width: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 7vh;
+}
+
+/* logo+标题+导航栏的设计 */
+.logo_title {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 7vh;
+    /*background-color: #0a1e1e;*/
+    background-color: rgba(10, 10, 30, 80%);
+}
+
+/* 导航栏头像 */
+.logo_title .headSculpture {
+    height: 5.5vh;
+    width: auto;
+    border-radius: 50%;
+    float: right;
+    margin-left: 1vw;
+    margin-top: 0.7vh;
+}
+
+.logo_title .navigation {
+    line-height: 7vh;
+    height: 100%;
+}
+
+.logo_title #logo,
+.logo_title .logo {
+    width: auto;
+    height: 100%;
+    float: left;
+}
+
+.logo_title #web-title,
+.logo_title .web-title {
+    font-size: 1.1vw;
+    height: 100%;
+    float: left;
+    color: #f1f1f1;
+    font-family: 'icomoon', serif;
+}
+
+.logo_title #web-title {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.logo_title > .left {
+    transition: all 0.5s ease-in-out;
+    background: linear-gradient(90deg, #03081a, rgba(0, 0, 0, 0));
+}
+
+.logo_title > .left:hover {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+}
+
+/* 导航栏 按钮区域 规则 */
+.navigation {
+    top: 0;
+    font-size: 1vw;
+}
+
+.navigation ul {
+    list-style-type: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+}
+
+.navigation ul li {
+    display: inline-block;
+    margin: 0 1vh;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #f1f1f1;
+    text-align: center;
+}
+
+.navigation ul li a:hover {
+    color: #1ed2c3;
+
+}
+
+.navigation input {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height: 2vh;
+    /*margin-bottom: 10px;*/
+    outline: none;
+    /*padding: 10px;*/
+    font-size: 13px;
+    width: 10vw;
+    color: #fff;
+    text-shadow: 1px 1px 1px;
+    border-top: 1px solid #312E3D;
+    border-left: 1px solid #312E3D;
+    border-right: 1px solid #312E3D;
+    border-bottom: 1px solid #56536A;
+    border-radius: 4px;
+    background-color: #2D2D3F;
+}
+
+.navigation input:hover {
+    animation: flicker_boxShadow 1s ease-in-out;
+}
+
+/*!* 按钮规则 *!*/
+/*input[type=button], #upload_your_data, button, a.button {*/
+/*    background-color: rgba(234, 226, 226, 0.6);*/
+/*    color: #204244;*/
+/*    transition: all 0.5s;*/
+/*    text-decoration: none;*/
+/*    padding: 5px;*/
+/*    margin: 10px;*/
+/*    font-size: 15px;*/
+/*}*/
+
+/*!* a 按钮边框 *!*/
+/*a.button {*/
+/*    text-decoration: none;*/
+/*    border: 1px solid #000000;*/
+/*}*/
+
+/*!* 按钮动态效果 *!*/
+/*input[type=button]:hover,*/
+/*#upload_your_data:hover,*/
+/*button:hover,*/
+/*a.button:hover {*/
+/*    background-color: rgb(0, 0, 0);*/
+/*    color: #72c6cb;*/
+/*}*/
+
+/* 按钮规则 */
+input[type=button],
+#upload_your_data,
+button,
+a.button {
+    /*background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(189, 167, 255), rgb(156, 239, 207), rgb(156, 242, 255));*/
+    background-image: linear-gradient(to right, rgb(121, 120, 120), rgb(98, 87, 129), rgb(133, 199, 172), rgb(138, 219, 231));
+    background-size: 300% 200%;
+    /* 初始位置设置为展示渐变的第一部分，这里假设我们想初始显示左侧的紫色部分 */
+    background-position: left center;
+    color: #fff;
+    transition: background-position 2s;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* a 按钮边框 以及显示方式 */
+a.button {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* 按钮动态效果 - 渐变移动 */
+input[type=button]:hover,
+#upload_your_data:hover,
+button:hover,
+a.button:hover {
+    /* 在hover时，将背景移动到展示渐变的第二部分，比如右侧的白色部分 */
+    background-position: right center;
+}
+
+/* 表整体格式 */
+table.theme-table {
+    text-align: center;
+    background-color: #1ed2c3;
+    align-items: center;
+}
+
+/* 表单元格格式与表格式 */
+td.theme-table,
+.theme-table td {
+    background-color: rgb(182, 238, 233);
+    padding: 5px 10px;
+}
+
+/* 水印 */
+.watermark {
+    background: url("../image/watermark.png");
+    background-size: 128px;
+}
+
+.DISPLAY_BOX {
+    width: 30%;
+    display: inline-block;
+    font-family: 'icomoon', serif;
+    background-color: #FFFFFF;
+    border: 1px solid #72c6cb;
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+
+.DISPLAY_BOX:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* 两个盒子分别一左一右 */
+.two_pages .left {
+    display: inline-block;
+    width: 47%;
+    height: 100%;
+    float: left;
+    margin-right: 3%;
+}
+
+.two_pages .right {
+    display: inline-block;
+    width: 47%;
+    height: 100%;
+    float: right;
+}
+
+.two_pages .navigation {
+    width: 65%;
+}
+
+.two_pages .navigation_left {
+    width: 30%;
+}
+
+#nav_search_input_form > * {
+    font-size: 1.5vh;
+    width: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* 地区位置显示文字 */
+.area_span {
+    float: right;
+    font-size: 1vh;
+    color: #7777;
+    text-decoration: none;
+}
+
+a.area_span:hover {
+    color: rgb(22, 103, 83);
+}
+
+/* 模糊效果较低的 */
+.glass-effect-0 {
+    position: relative;
+    -webkit-backdrop-filter: blur(2px); /* 使用webkit内核的浏览器支持 */
+    backdrop-filter: blur(2px); /* 大多数现代浏览器支持 */
+}
+
+/* 模糊效果较高的 */
+.glass-effect {
+    position: relative;
+    -webkit-backdrop-filter: blur(10px); /* 使用webkit内核的浏览器支持 */
+    backdrop-filter: blur(10px); /* 大多数现代浏览器支持 */
+}
+
+/* 滑块隐藏操作 */
+.scrollbar_x {
+    overflow-x: auto; /* 自动隐藏超出容器的内容 */
+    white-space: nowrap;
+}
+
+.scrollbar_x::-webkit-scrollbar {
+    display: none; /* 隐藏滚动条 (Chrome, Safari) */
+}
+
+.scrollbar_y {
+    overflow-y: auto; /* 自动隐藏超出容器的内容 */
+    white-space: nowrap;
+}
+
+.scrollbar_y::-webkit-scrollbar {
+    display: none; /* 隐藏滚动条 (Chrome, Safari) */
+}
+
+/* 定义名为 "rotateText" 的关键帧动画 */
+@keyframes rotateText {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 定义名为 "rotateText_2" 的关键帧动画 */
+@keyframes rotateText_2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(0deg); /* 到达50%时旋转180度 */
+    }
+    50% {
+        transform: rotate(180deg); /* 到达50%时旋转180度 */
+    }
+    50.5% { /* 添加额外的关键帧，稍过50%以避免瞬间跳转 */
+        transform: rotate(180deg);
+    }
+    70% {
+        transform: rotate(180deg); /* 在50%至70%之间保持静止 */
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.load-icon {
+    display: inline-block;
+    color: #00b682;
+    /* 应用动画到 .load-icon 类 */
+    animation: rotateText 2s linear infinite;
+}
+
+.load-icon-2 {
+    display: inline-block;
+    color: #00b682;
+    /* 应用动画到 .load-icon 类 */
+    animation: rotateText_2 5s linear infinite;
+}
